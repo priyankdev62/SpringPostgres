@@ -23,4 +23,8 @@ public class DepartmentServiceImpl  implements DepartmentService {
         BeanUtils.copyProperties(savedDepartment, departmentResponseDto);
         return departmentResponseDto;
     }
+    @Override
+    public Department getDepartmentById(long id){
+        return departmentRepository.findById(id).get();
+    }
 }

@@ -5,10 +5,7 @@ import com.example.SpringPostgres.dto.DepartmentResponseDto;
 import com.example.SpringPostgres.entity.Department;
 import com.example.SpringPostgres.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/department")
@@ -19,5 +16,10 @@ public class DepartmentController {
     @PostMapping
     public DepartmentResponseDto createDepartment(@RequestBody DepartmentRequestDto departmentRequestDto){
         return departmentService.createDepartment(departmentRequestDto);
+    }
+    @GetMapping(value ="/{id}")
+    public Department getDepartmentById(@PathVariable("id") long id)
+    {
+        return departmentService.getDepartmentById(id);
     }
 }
