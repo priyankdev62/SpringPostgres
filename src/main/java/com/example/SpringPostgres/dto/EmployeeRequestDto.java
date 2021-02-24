@@ -10,5 +10,7 @@ public class EmployeeRequestDto {
 
     private String name;
 
-    private String departmentName;
+   // private String departmentName;
+
+    private DepartmentRequestDto department;
 }

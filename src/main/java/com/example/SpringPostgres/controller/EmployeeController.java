@@ -8,6 +8,8 @@ import com.example.SpringPostgres.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -38,4 +40,9 @@ public class EmployeeController {
         return employeeService.deleteById(id);
     }
     //DELETE - /employee/{id}
+    @GetMapping(value =  "/department/{id}")
+    public List<EmployeeResponseDto> getEmployeeListByDepartment(@PathVariable("id") long departmentId)
+    {
+        return employeeService.getEmployeeListByDepartment(departmentId);
+    }
 }
