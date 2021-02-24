@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface EmployeeRepository extends CrudRepository<Employee,Long> {
     List<Employee> findByDepartment(Department department);
-    List<Employee> findByDepartment_Id(long departmentId);
+    List<Employee> findByDepartment_Id(Long departmentId);
     @Query("Select e FROM febemployee e WHERE e.department.id = ?1")
     List<Employee> findEmployeeListByDepartmentId(long departmentId);
 

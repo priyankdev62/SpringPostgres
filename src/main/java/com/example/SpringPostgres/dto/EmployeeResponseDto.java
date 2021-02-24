@@ -8,9 +8,10 @@ import lombok.Setter;
 @Setter
 
 public class EmployeeResponseDto {
-    private long id;
+    private Long id;
 
     private String name;
+    private String employeeCode;
 
     private DepartmentResponseDto department;
     public void setDepartmentFromEntity(Department departmentEntity)
